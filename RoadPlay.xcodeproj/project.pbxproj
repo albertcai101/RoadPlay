@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D8BF3FDF2C75A15E0072D26C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8BF3FC62C75A15C0072D26C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8BF3FCD2C75A15C0072D26C;
+			remoteInfo = RoadPlay;
+		};
+		D8BF3FE92C75A15E0072D26C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8BF3FC62C75A15C0072D26C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8BF3FCD2C75A15C0072D26C;
+			remoteInfo = RoadPlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8BF3FCE2C75A15C0072D26C /* RoadPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BF3FDE2C75A15E0072D26C /* RoadPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BF3FE82C75A15E0072D26C /* RoadPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D8BF3FD02C75A15C0072D26C /* RoadPlay */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RoadPlay; sourceTree = "<group>"; };
+		D8BF3FE12C75A15E0072D26C /* RoadPlayTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RoadPlayTests; sourceTree = "<group>"; };
+		D8BF3FEB2C75A15E0072D26C /* RoadPlayUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RoadPlayUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8BF3FCB2C75A15C0072D26C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BF3FDB2C75A15E0072D26C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BF3FE52C75A15E0072D26C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8BF3FC52C75A15C0072D26C = {
+			isa = PBXGroup;
+			children = (
+				D8BF3FD02C75A15C0072D26C /* RoadPlay */,
+				D8BF3FE12C75A15E0072D26C /* RoadPlayTests */,
+				D8BF3FEB2C75A15E0072D26C /* RoadPlayUITests */,
+				D8BF3FCF2C75A15C0072D26C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8BF3FCF2C75A15C0072D26C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8BF3FCE2C75A15C0072D26C /* RoadPlay.app */,
+				D8BF3FDE2C75A15E0072D26C /* RoadPlayTests.xctest */,
+				D8BF3FE82C75A15E0072D26C /* RoadPlayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8BF3FCD2C75A15C0072D26C /* RoadPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8BF3FF22C75A15E0072D26C /* Build configuration list for PBXNativeTarget "RoadPlay" */;
+			buildPhases = (
+				D8BF3FCA2C75A15C0072D26C /* Sources */,
+				D8BF3FCB2C75A15C0072D26C /* Frameworks */,
+				D8BF3FCC2C75A15C0072D26C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D8BF3FD02C75A15C0072D26C /* RoadPlay */,
+			);
+			name = RoadPlay;
+			packageProductDependencies = (
+			);
+			productName = RoadPlay;
+			productReference = D8BF3FCE2C75A15C0072D26C /* RoadPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8BF3FDD2C75A15E0072D26C /* RoadPlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8BF3FF52C75A15E0072D26C /* Build configuration list for PBXNativeTarget "RoadPlayTests" */;
+			buildPhases = (
+				D8BF3FDA2C75A15E0072D26C /* Sources */,
+				D8BF3FDB2C75A15E0072D26C /* Frameworks */,
+				D8BF3FDC2C75A15E0072D26C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8BF3FE02C75A15E0072D26C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D8BF3FE12C75A15E0072D26C /* RoadPlayTests */,
+			);
+			name = RoadPlayTests;
+			packageProductDependencies = (
+			);
+			productName = RoadPlayTests;
+			productReference = D8BF3FDE2C75A15E0072D26C /* RoadPlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8BF3FE72C75A15E0072D26C /* RoadPlayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8BF3FF82C75A15E0072D26C /* Build configuration list for PBXNativeTarget "RoadPlayUITests" */;
+			buildPhases = (
+				D8BF3FE42C75A15E0072D26C /* Sources */,
+				D8BF3FE52C75A15E0072D26C /* Frameworks */,
+				D8BF3FE62C75A15E0072D26C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8BF3FEA2C75A15E0072D26C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D8BF3FEB2C75A15E0072D26C /* RoadPlayUITests */,
+			);
+			name = RoadPlayUITests;
+			packageProductDependencies = (
+			);
+			productName = RoadPlayUITests;
+			productReference = D8BF3FE82C75A15E0072D26C /* RoadPlayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8BF3FC62C75A15C0072D26C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D8BF3FCD2C75A15C0072D26C = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					D8BF3FDD2C75A15E0072D26C = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D8BF3FCD2C75A15C0072D26C;
+					};
+					D8BF3FE72C75A15E0072D26C = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D8BF3FCD2C75A15C0072D26C;
+					};
+				};
+			};
+			buildConfigurationList = D8BF3FC92C75A15C0072D26C /* Build configuration list for PBXProject "RoadPlay" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8BF3FC52C75A15C0072D26C;
+			productRefGroup = D8BF3FCF2C75A15C0072D26C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8BF3FCD2C75A15C0072D26C /* RoadPlay */,
+				D8BF3FDD2C75A15E0072D26C /* RoadPlayTests */,
+				D8BF3FE72C75A15E0072D26C /* RoadPlayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8BF3FCC2C75A15C0072D26C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BF3FDC2C75A15E0072D26C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BF3FE62C75A15E0072D26C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8BF3FCA2C75A15C0072D26C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BF3FDA2C75A15E0072D26C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8BF3FE42C75A15E0072D26C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8BF3FE02C75A15E0072D26C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8BF3FCD2C75A15C0072D26C /* RoadPlay */;
+			targetProxy = D8BF3FDF2C75A15E0072D26C /* PBXContainerItemProxy */;
+		};
+		D8BF3FEA2C75A15E0072D26C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8BF3FCD2C75A15C0072D26C /* RoadPlay */;
+			targetProxy = D8BF3FE92C75A15E0072D26C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D8BF3FF02C75A15E0072D26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D8BF3FF12C75A15E0072D26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8BF3FF32C75A15E0072D26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RoadPlay/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.albertcai.RoadPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8BF3FF42C75A15E0072D26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RoadPlay/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.albertcai.RoadPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D8BF3FF62C75A15E0072D26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.albertcai.RoadPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoadPlay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoadPlay";
+			};
+			name = Debug;
+		};
+		D8BF3FF72C75A15E0072D26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.albertcai.RoadPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoadPlay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoadPlay";
+			};
+			name = Release;
+		};
+		D8BF3FF92C75A15E0072D26C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.albertcai.RoadPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RoadPlay;
+			};
+			name = Debug;
+		};
+		D8BF3FFA2C75A15E0072D26C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.albertcai.RoadPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RoadPlay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8BF3FC92C75A15C0072D26C /* Build configuration list for PBXProject "RoadPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BF3FF02C75A15E0072D26C /* Debug */,
+				D8BF3FF12C75A15E0072D26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8BF3FF22C75A15E0072D26C /* Build configuration list for PBXNativeTarget "RoadPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BF3FF32C75A15E0072D26C /* Debug */,
+				D8BF3FF42C75A15E0072D26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8BF3FF52C75A15E0072D26C /* Build configuration list for PBXNativeTarget "RoadPlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BF3FF62C75A15E0072D26C /* Debug */,
+				D8BF3FF72C75A15E0072D26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8BF3FF82C75A15E0072D26C /* Build configuration list for PBXNativeTarget "RoadPlayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8BF3FF92C75A15E0072D26C /* Debug */,
+				D8BF3FFA2C75A15E0072D26C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8BF3FC62C75A15C0072D26C /* Project object */;
+}
