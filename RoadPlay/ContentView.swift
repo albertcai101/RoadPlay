@@ -12,9 +12,33 @@ import Charts
 struct ContentView: View {
     @StateObject private var motionManager = MotionManager()
     @StateObject private var locationManager = LocationManager()
+    @StateObject private var audioManager = AudioManager()
     
     var body: some View {
         VStack {
+            // Audio Sliders
+            VStack {
+                Text("Audio Mixer")
+                    .font(.largeTitle)
+                    .padding(.top)
+                
+                ForEach(audioManager.tracks, id: \.self) { track in
+                    VStack(alignment: .leading) {
+                        Text("\(track.name.capitalized): \(String(format: "%.2f", track.volume))")
+                            .font(.headline)
+                        
+                        Slider(value: Binding(
+                            get: { track.volume },
+                            set: { newValue in
+                                audioManager.adjustVolume(for: track.name, to: newValue)
+                            }
+                        ), in: 0...1)
+                        .accentColor(.green)
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            .padding(.bottom)
             // Top row showing the most recent values
             HStack {
                 VStack {
