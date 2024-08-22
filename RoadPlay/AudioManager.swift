@@ -33,7 +33,7 @@ class AudioManager: ObservableObject {
     }
     
     func createPlayer(for name: String) -> AVAudioPlayer? {
-        guard let url = Bundle.main.url(forResource: name, withExtension: "mp3", subdirectory: "wavs") else {
+        guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else {
             print("Audio file not found: \(name).mp3")
             return nil
         }
