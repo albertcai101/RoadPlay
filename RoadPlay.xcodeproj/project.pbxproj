@@ -29,8 +29,18 @@
 		D8BF3FE82C75A15E0072D26C /* RoadPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoadPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D842C5A02C77C50200698B52 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D8BF3FCD2C75A15C0072D26C /* RoadPlay */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D8BF3FD02C75A15C0072D26C /* RoadPlay */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RoadPlay; sourceTree = "<group>"; };
+		D8BF3FD02C75A15C0072D26C /* RoadPlay */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D842C5A02C77C50200698B52 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = RoadPlay; sourceTree = "<group>"; };
 		D8BF3FE12C75A15E0072D26C /* RoadPlayTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RoadPlayTests; sourceTree = "<group>"; };
 		D8BF3FEB2C75A15E0072D26C /* RoadPlayUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RoadPlayUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -386,6 +396,7 @@
 				DEVELOPMENT_TEAM = A6Z4XZ33S5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoadPlay/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For the best dynamic music experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -417,6 +428,7 @@
 				DEVELOPMENT_TEAM = A6Z4XZ33S5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoadPlay/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For the best dynamic music experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
