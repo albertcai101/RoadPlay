@@ -11,6 +11,7 @@ import SwiftUI
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     
+    // DESIRED UNITS: MPH
     @Published var speed: [CLLocationSpeed] = []
     
     override init() {
@@ -22,10 +23,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        let currentSpeed = location.speed
+        let currentSpeedMetersPerSecond = location.speed // This is in meters/second
+        let currentSpeedMPH = currentSpeedMetersPerSecond * 2.23694
         
         DispatchQueue.main.async {
-            self.speed.append(currentSpeed)
+            self.speed.append(currentSpeedMPH)
             
             // Limit array size to 100 points
             if self.speed.count > 100 {

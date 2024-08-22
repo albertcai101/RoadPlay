@@ -11,11 +11,16 @@ import AVFoundation
 class AudioManager: ObservableObject {
     struct Track: Hashable {
         var name: String
-        var volume: Float
+        var volume: Float {
+            didSet {
+                player?.volume = volume
+            }
+        }
         var player: AVAudioPlayer?
     }
     
     @Published var tracks: [Track] = []
+    @Published var isPlaying = true
     
     init() {
         let trackNames = ["piano", "bass", "vocals", "drums", "guitar", "other"]
@@ -52,4 +57,18 @@ class AudioManager: ObservableObject {
             tracks[index].player?.volume = newVolume
         }
     }
+    
+    func togglePlayPause() {
+            isPlaying.toggle()
+            
+            if isPlaying {
+                for track in tracks {
+                    track.player?.play()
+                }
+            } else {
+                for track in tracks {
+                    track.player?.pause()
+                }
+            }
+        }
 }

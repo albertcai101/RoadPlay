@@ -12,7 +12,16 @@ class MotionManager: ObservableObject {
     private let motionManager = CMMotionManager()
     private let queue = OperationQueue()
     
+    // units are in g's
+    // 46% of braking is 0 to -0.05
+    // 28% is -0.05 to -0.1
+    // 11.5% is -0.1 to -0.15
+    // 7% is -0.15 to -0.2
+    // 6% is -0.2 to -0.3
+    // Remaining ~1.5% is above
     @Published var accelZ: [Double] = []
+    
+    // units are in radians / second
     @Published var angleVelZ: [Double] = []
     
     init() {

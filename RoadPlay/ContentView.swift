@@ -16,30 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            // Audio Sliders
-            VStack {
-                Text("Audio Mixer")
-                    .font(.largeTitle)
-                    .padding(.top)
-                
-                ForEach(audioManager.tracks, id: \.self) { track in
-                    VStack(alignment: .leading) {
-                        Text("\(track.name.capitalized): \(String(format: "%.2f", track.volume))")
-                            .font(.headline)
-                        
-                        Slider(value: Binding(
-                            get: { track.volume },
-                            set: { newValue in
-                                audioManager.adjustVolume(for: track.name, to: newValue)
-                            }
-                        ), in: 0...1)
-                        .accentColor(.green)
-                    }
-                    .padding(.horizontal)
-                }
-            }
-            .padding(.bottom)
-            // Top row showing the most recent values
+            // Telemetry for Sensor Readouts
             HStack {
                 VStack {
                     Text("w")
@@ -62,17 +39,47 @@ struct ContentView: View {
                 VStack {
                     Text("s")
                         .font(.caption)
-                    Text("\(locationManager.speed.last ?? 0.0, specifier: "%.1f") m/s")
+                    Text("\(locationManager.speed.last ?? 0.0, specifier: "%.1f") mph")
                         .font(.headline)
                 }
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .padding(.vertical, 8)
+            .padding(.bottom)
             .background(Color(UIColor.systemGray6))
             .cornerRadius(8)
             .padding(.horizontal)
             
+            // Play/Pause Button
+            Button(action: {
+                audioManager.togglePlayPause()
+            }) {
+                Text(audioManager.isPlaying ? "Pause" : "Play")
+                    .font(.title)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding(.bottom)
+            
+            // Audio Sliders
+            VStack {
+                ForEach($audioManager.tracks, id: \.name) { $track in
+                    VStack(alignment: .leading) {
+                        Text("\(track.name.capitalized): \(String(format: "%.2f", track.volume))")
+                            .font(.headline)
+                        
+                        Slider(
+                            value: $track.volume,
+                            in: 0...1
+                        )
+                        .accentColor(.green)
+                    }
+                    .padding(.horizontal)
+                }            }
+            .padding(.bottom)
+
             // ScrollView for the charts
             ScrollView {
                 VStack {
