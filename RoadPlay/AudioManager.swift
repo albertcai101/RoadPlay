@@ -17,6 +17,11 @@ class AudioManager: ObservableObject {
                 player?.volume = volume
             }
         }
+        var pan: Float { // -1.0 is full left, 0.0 is center, and +1.0 is full right
+            didSet {
+                player?.pan = pan
+            }
+        }
         var player: AVAudioPlayer?
     }
     
@@ -29,14 +34,16 @@ class AudioManager: ObservableObject {
         
         let trackNames = ["piano", "bass", "vocals", "drums", "guitar", "other"]
         let initialVolumes: [Float] = [0.5, 0.7, 0.8, 0.6, 0.9, 0.4]
+        let initialPans: [Float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         
         for (index, name) in trackNames.enumerated() {
             if let player = createPlayer(for: name) {
                 player.volume = initialVolumes[index]
+                player.pan = initialPans[index]
                 player.numberOfLoops = -1 // Loop indefinitely
                 player.play()
                 
-                let track = Track(name: name, volume: initialVolumes[index], player: player)
+                let track = Track(name: name, volume: initialVolumes[index], pan: initialPans[index], player: player)
                 tracks.append(track)
             }
         }
@@ -62,6 +69,14 @@ class AudioManager: ObservableObject {
         if let index = tracks.firstIndex(where: { $0.name == name }) {
             tracks[index].volume = newVolume
             tracks[index].player?.volume = newVolume
+            updateNowPlayingInfo()
+        }
+    }
+    
+    func adjsutPan(for name: String, to newPan: Float) {
+        if let index = tracks.firstIndex(where: { $0.name == name }) {
+            tracks[index].pan = newPan
+            tracks[index].player?.pan = newPan
             updateNowPlayingInfo()
         }
     }

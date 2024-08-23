@@ -14,6 +14,8 @@ struct ContentView: View {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var audioManager = AudioManager()
     
+    @State private var timer: Timer?
+    
     var body: some View {
         VStack {
             // Telemetry for Sensor Readouts
@@ -23,6 +25,7 @@ struct ContentView: View {
                         .font(.caption)
                     Text("\(motionManager.angleVelZ.last ?? 0.0, specifier: "%.1f") rad/s")
                         .font(.headline)
+                    Text("\(motionManager.smoothAngleVelZ ?? 0.0, specifier: "%.1f") rad/s (smooth)")
                 }
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -79,7 +82,7 @@ struct ContentView: View {
                     .padding(.horizontal)
                 }            }
             .padding(.bottom)
-
+            
             // ScrollView for the charts
             ScrollView {
                 VStack {
@@ -120,6 +123,33 @@ struct ContentView: View {
                     .padding()
                 }
             }
+        }
+        .onAppear {
+            startDynamicAudioLoop()
+        }
+        .onDisappear {
+            stopDynamicAudioLoop()
+        }
+    }
+    
+    private func startDynamicAudioLoop() {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            updatePanBasedOnAngularVelocity(motionManager.smoothAngleVelZ)
+        }
+    }
+    
+    private func stopDynamicAudioLoop() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    private func updatePanBasedOnAngularVelocity(_ angularVelocity: Double) {
+        let sign = angularVelocity >= 0 ? 1.0 : -1.0
+        let panValue = Float(sign * sqrt(abs(angularVelocity)) / 0.5)
+        let clampedPanValue = min(max(panValue, -0.5), 0.5)
+        
+        for (index, _) in audioManager.tracks.enumerated() {
+            audioManager.tracks[index].pan = clampedPanValue
         }
     }
 }

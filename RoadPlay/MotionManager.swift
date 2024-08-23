@@ -9,6 +9,8 @@ import CoreMotion
 import SwiftUI
 
 class MotionManager: ObservableObject {
+    private final let LOW_PASS_ALPHA = 0.12
+    
     private let motionManager = CMMotionManager()
     private let queue = OperationQueue()
     
@@ -23,6 +25,7 @@ class MotionManager: ObservableObject {
     
     // units are in radians / second
     @Published var angleVelZ: [Double] = []
+    @Published var smoothAngleVelZ: Double = 0.0
     
     init() {
         requestMotionData()
@@ -40,6 +43,8 @@ class MotionManager: ObservableObject {
                 self?.accelZ.append(Double(acceleration.z))
                 self?.angleVelZ.append(Double(gyro.z))
                 
+                self?.applyLowPassFilter(to: Double(gyro.z))
+                
                 // Limit array size to 100 points
                 if self?.accelZ.count ?? 0 > 100 {
                     self?.accelZ.removeFirst()
@@ -48,4 +53,13 @@ class MotionManager: ObservableObject {
             }
         }
     }
+    
+    private func applyLowPassFilter(to newAngleVelZ: Double) {
+        // guard agaisnt sudden movements
+        guard abs(newAngleVelZ) <= 5 else { return }
+        guard abs(newAngleVelZ - smoothAngleVelZ) <= 0.5 else { return }
+        
+        smoothAngleVelZ = LOW_PASS_ALPHA * newAngleVelZ + (1 - LOW_PASS_ALPHA) * smoothAngleVelZ
+    }
+
 }
