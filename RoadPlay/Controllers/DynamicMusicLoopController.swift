@@ -59,5 +59,23 @@ class DynamicMusicLoopController: ObservableObject, DynamicMusicLoopControllerPr
         let clampedPanValue = min(max(panValue, -0.5), 0.5)
         
         audioManager.adjustPanForAllTracks(to: clampedPanValue)
+        
+        let speed = locationManager.speed.last ?? 0.0
+        let normalizedSpeed = min(max(speed / 70.0, 0), 1)
+        for track in audioManager.tracks {
+            let trackName = track.name
+            var newVolume = normalizedSpeed * 7 - 2.5
+            if trackName.contains("bass") {
+                newVolume = normalizedSpeed + 0.5
+            } else if trackName.contains("drums") {
+                newVolume = normalizedSpeed * 7 - 1
+            } else if trackName.contains("vocals") {
+                newVolume = normalizedSpeed * 7 - 4
+            }
+            
+            newVolume = min(max(newVolume, 0), 1)
+            
+            audioManager.adjustVolume(for: trackName, to: Float(newVolume))
+        }
     }
 }

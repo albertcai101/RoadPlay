@@ -12,6 +12,8 @@ import Charts
 struct ContentView: View {
     @StateObject private var dynamicMusicLoopController: DynamicMusicLoopController
     @ObservedObject private var audioManager: AudioManager
+    @ObservedObject private var motionManager: MotionManager
+    @ObservedObject private var locationManager: LocationManager
     
     // Navigation States
     @State private var selectedTab : Int = 0
@@ -23,12 +25,14 @@ struct ContentView: View {
         let audioManager = AudioManager()
         _dynamicMusicLoopController = StateObject(wrappedValue: DynamicMusicLoopController(motionManager: motionManager, locationManager: locationManager, audioManager: audioManager))
         _audioManager = ObservedObject(wrappedValue: audioManager)
+        _motionManager = ObservedObject(wrappedValue: motionManager)
+        _locationManager = ObservedObject(wrappedValue: locationManager)
     }
     
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab ) {
-                HomeView(audioManager: audioManager)
+                HomeView(audioManager: audioManager, locationManager: locationManager)
                     .tabItem {
                         Image(systemName: "car.side.fill")
                         Text("Drive")

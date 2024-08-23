@@ -25,12 +25,12 @@ struct PlayPauseButton: View {
         } label: {
             ZStack {
                 Image(systemName: "pause.fill")
-                    .font(.system(size: 64))
+                    .font(.system(size: 48))
                     .scaleEffect(isPlaying ? 1 : 0)
                     .opacity(isPlaying ? 1 : 0)
                     .animation(.interpolatingSpring(stiffness: 170, damping: 15), value: isPlaying)
                 Image(systemName: "play.fill")
-                    .font(.system(size: 64))
+                    .font(.system(size: 48))
                     .scaleEffect(isPlaying ? 0 : 1)
                     .opacity(isPlaying ? 0 : 1)
                     .animation(.interpolatingSpring(stiffness: 170, damping: 15), value: isPlaying)

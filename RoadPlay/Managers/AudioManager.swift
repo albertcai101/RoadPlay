@@ -63,7 +63,7 @@ class AudioManager: ObservableObject, AudioManagerProtocol {
     
     private func loadTracks() {
         let trackNames = ["piano", "bass", "vocals", "drums", "guitar", "other"]
-        let initialVolumes: [Float] = [0.5, 0.7, 0.8, 0.6, 0.9, 0.4]
+        let initialVolumes: [Float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         let initialPans: [Float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         
         for (index, name) in trackNames.enumerated() {
