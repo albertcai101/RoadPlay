@@ -32,7 +32,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab ) {
-                HomeView(audioManager: audioManager, locationManager: locationManager)
+                HomeView(audioManager: audioManager)
                     .tabItem {
                         Image(systemName: "car.side.fill")
                         Text("Drive")
@@ -45,6 +45,12 @@ struct ContentView: View {
                         Text("Search")
                     }
                     .tag(1)
+                TelemetryView(motionManager: motionManager, locationManager: locationManager)
+                    .tabItem {
+                        Image(systemName: "sensor")
+                        Text("Telemetry")
+                    }
+                    .tag(2)
             }
         }
         .onAppear {

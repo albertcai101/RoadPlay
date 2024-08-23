@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct TelemetryView: View {
+    
+    @ObservedObject var motionManager: MotionManager
+    @ObservedObject var locationManager: LocationManager
+    
     var body: some View {
         Text("Coming soon!")
     }
 }
 
 #Preview {
-    TelemetryView()
+    TelemetryView(motionManager: .init(), locationManager: .init())
 }

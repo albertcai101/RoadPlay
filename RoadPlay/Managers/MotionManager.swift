@@ -58,18 +58,16 @@ class MotionManager: ObservableObject, MotionManagerProtocol {
     }
     
     private func processMotionData(_ data: CMDeviceMotion) {
-        let gyro = data.rotationRate
-        let acceleration = data.userAcceleration
-        
-        queue.addOperation { [weak self] in
-            self?.accelZ.append(acceleration.z)
-            self?.angleVelZ.append(gyro.z)
-            self?.applyLowPassFilter(to: gyro.z)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.accelZ.append(data.userAcceleration.z)
+            self.angleVelZ.append(data.rotationRate.z)
+            self.applyLowPassFilter(to: data.rotationRate.z)
             
             // Limit array size to 100 points
-            if self?.accelZ.count ?? 0 > 100 {
-                self?.accelZ.removeFirst()
-                self?.angleVelZ.removeFirst()
+            if self.accelZ.count > 100 {
+                self.accelZ.removeFirst()
+                self.angleVelZ.removeFirst()
             }
         }
     }
