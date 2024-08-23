@@ -7,31 +7,61 @@
 
 import AVFoundation
 import MediaPlayer
-import SwiftUI
+import Combine
 
-class AudioManager: ObservableObject {
-    struct Track: Hashable {
-        var name: String
-        var volume: Float {
+protocol AudioManagerProtocol: AnyObject {
+    var isPlaying: Bool { get }
+    var tracks: [AudioManager.Track] { get }
+    func togglePlayPause()
+    func adjustVolume(for name: String, to newVolume: Float)
+    func adjustPan(for name: String, to newPan: Float)
+    func adjustPanForAllTracks(to newPan: Float)
+}
+
+class AudioManager: ObservableObject, AudioManagerProtocol {
+    class Track: ObservableObject, Identifiable, Hashable {
+        let id = UUID()
+        @Published var name: String
+        @Published var volume: Float {
             didSet {
                 player?.volume = volume
             }
         }
-        var pan: Float { // -1.0 is full left, 0.0 is center, and +1.0 is full right
+        @Published var pan: Float {
             didSet {
                 player?.pan = pan
             }
         }
         var player: AVAudioPlayer?
+        
+        init(name: String, volume: Float, pan: Float, player: AVAudioPlayer?) {
+            self.name = name
+            self.volume = volume
+            self.pan = pan
+            self.player = player
+        }
+        
+        static func == (lhs: Track, rhs: Track) -> Bool {
+            return lhs.id == rhs.id
+        }
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
     }
-    
     @Published var tracks: [Track] = []
-    @Published var isPlaying = true
+    @Published var isPlaying = false
     
     init() {
+        loadTracks()
         configureNowPlaying()
         configureRemoteCommandCenter()
         
+        
+        updateNowPlayingInfo()
+    }
+    
+    private func loadTracks() {
         let trackNames = ["piano", "bass", "vocals", "drums", "guitar", "other"]
         let initialVolumes: [Float] = [0.5, 0.7, 0.8, 0.6, 0.9, 0.4]
         let initialPans: [Float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -48,10 +78,10 @@ class AudioManager: ObservableObject {
             }
         }
         
-        updateNowPlayingInfo()
+        isPlaying = true
     }
     
-    func createPlayer(for name: String) -> AVAudioPlayer? {
+    private func createPlayer(for name: String) -> AVAudioPlayer? {
         guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else {
             print("Audio file not found: \(name).mp3")
             return nil
@@ -68,17 +98,22 @@ class AudioManager: ObservableObject {
     func adjustVolume(for name: String, to newVolume: Float) {
         if let index = tracks.firstIndex(where: { $0.name == name }) {
             tracks[index].volume = newVolume
-            tracks[index].player?.volume = newVolume
             updateNowPlayingInfo()
         }
     }
     
-    func adjsutPan(for name: String, to newPan: Float) {
+    func adjustPan(for name: String, to newPan: Float) {
         if let index = tracks.firstIndex(where: { $0.name == name }) {
             tracks[index].pan = newPan
-            tracks[index].player?.pan = newPan
             updateNowPlayingInfo()
         }
+    }
+    
+    func adjustPanForAllTracks(to newPan: Float) {
+        for (index, track) in tracks.enumerated() {
+            tracks[index].pan = newPan
+        }
+        updateNowPlayingInfo()
     }
     
     func togglePlayPause() {
@@ -112,13 +147,13 @@ class AudioManager: ObservableObject {
         if let firstTrack = tracks.first {
             nowPlayingInfo[MPMediaItemPropertyTitle] = "Roadplay Session"
         }
-
+        
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     
     private func configureRemoteCommandCenter() {
         let commandCenter = MPRemoteCommandCenter.shared()
-
+        
         commandCenter.playCommand.isEnabled = true
         commandCenter.playCommand.addTarget { [unowned self] event in
             if !self.isPlaying {
@@ -127,7 +162,7 @@ class AudioManager: ObservableObject {
             }
             return .commandFailed
         }
-
+        
         commandCenter.pauseCommand.isEnabled = true
         commandCenter.pauseCommand.addTarget { [unowned self] event in
             if self.isPlaying {

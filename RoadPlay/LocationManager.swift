@@ -6,9 +6,15 @@
 //
 
 import CoreLocation
-import SwiftUI
+import Combine
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+protocol LocationManagerProtocol: AnyObject {
+    var speed: [Double] { get }
+    func startUpdates()
+    func stopUpdates()
+}
+
+class LocationManager: NSObject, ObservableObject, LocationManagerProtocol, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     
     // DESIRED UNITS: MPH
@@ -16,9 +22,21 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     override init() {
         super.init()
+        configureLocationManager()
+    }
+    
+    private func configureLocationManager() {
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func startUpdates() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    func stopUpdates() {
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -34,5 +52,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 self.speed.removeFirst()
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager failed with error: \(error.localizedDescription)")
     }
 }
