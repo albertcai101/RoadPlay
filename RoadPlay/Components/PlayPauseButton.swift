@@ -38,3 +38,7 @@ struct PlayPauseButton: View {
         }
     }
 }
+
+#Preview {
+    PlayPauseButton(isPlaying: .constant(false), action: {})
+}
