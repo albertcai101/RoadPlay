@@ -45,7 +45,7 @@ struct ContentView: View {
                         Text("Search")
                     }
                     .tag(1)
-                TelemetryView(motionManager: motionManager, locationManager: locationManager)
+                TelemetryView(motionManager: motionManager, locationManager: locationManager, audioManager: audioManager)
                     .tabItem {
                         Image(systemName: "sensor")
                         Text("Telemetry")

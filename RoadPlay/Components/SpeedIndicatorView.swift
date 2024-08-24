@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpeedLimitView: View {
+struct SpeedIndicatorView: View {
     let speed: Double
     
     var body: some View {
@@ -28,5 +28,5 @@ struct SpeedLimitView: View {
 }
 
 #Preview {
-    SpeedLimitView(speed: 20)
+    SpeedIndicatorView(speed: 20)
 }

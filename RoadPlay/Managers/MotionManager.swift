@@ -19,7 +19,7 @@ protocol MotionManagerProtocol: AnyObject {
 class MotionManager: ObservableObject, MotionManagerProtocol {
     private let motionManager = CMMotionManager()
     private let queue = OperationQueue()
-    private final let LOW_PASS_ALPHA = 0.12
+    private final let LOW_PASS_ALPHA = 0.758
     
     @Published var accelZ: [Double] = []
     @Published var angleVelZ: [Double] = []
@@ -80,8 +80,8 @@ class MotionManager: ObservableObject, MotionManagerProtocol {
     
     private func applyLowPassFilter(to newAngleVelZ: Double) {
         // Guard against sudden movements
-        guard abs(newAngleVelZ) <= 5 else { return }
-        guard abs(newAngleVelZ - smoothAngleVelZ) <= 0.5 else { return }
+        // guard abs(newAngleVelZ) <= 5 else { return }
+        // guard abs(newAngleVelZ - smoothAngleVelZ) <= 0.5 else { return }
         
         smoothAngleVelZ = LOW_PASS_ALPHA * newAngleVelZ + (1 - LOW_PASS_ALPHA) * smoothAngleVelZ
     }

@@ -18,6 +18,8 @@ class DynamicMusicLoopController: ObservableObject, DynamicMusicLoopControllerPr
     let locationManager: LocationManagerProtocol
     let audioManager: AudioManagerProtocol
     
+    private final let SPEED_NORMALIZATION_MPH: Double = 25.0
+    
     private var timer: Timer?
     
     init(motionManager: MotionManagerProtocol, locationManager: LocationManagerProtocol, audioManager: AudioManagerProtocol) {
@@ -55,13 +57,13 @@ class DynamicMusicLoopController: ObservableObject, DynamicMusicLoopControllerPr
     private func updateDynamicMusic() {
         let angularVelocity = motionManager.smoothAngleVelZ
         let sign = angularVelocity >= 0 ? 1.0 : -1.0
-        let panValue = Float(sign * sqrt(abs(angularVelocity)) / 0.5)
+        let panValue = Float(sign * sqrt(abs(angularVelocity)) / 1.0)
         let clampedPanValue = min(max(panValue, -0.5), 0.5)
         
         audioManager.adjustPanForAllTracks(to: clampedPanValue)
         
         let speed = locationManager.speed.last ?? 0.0
-        let normalizedSpeed = min(max(speed / 70.0, 0), 1)
+        let normalizedSpeed = min(max(speed / SPEED_NORMALIZATION_MPH, 0), 1)
         for track in audioManager.tracks {
             let trackName = track.name
             var newVolume = normalizedSpeed * 7 - 2.5

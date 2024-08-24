@@ -24,7 +24,7 @@ struct RoadPlayApp: App {
     private func configureAudioSession() {
         do {
             let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowBluetooth])
+            try audioSession.setCategory(.playback, mode: .default, options: [])
             try audioSession.setActive(true)
         } catch {
             print("Error configuring audio session: \(error)")
